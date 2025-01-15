@@ -14,7 +14,7 @@ public class Log {
 
     public Log(int id, String mitgliedsname, Haus haus, String ereignis, Date datum) {
         this.id = id;
-        this.Mitgliedsname = mitgliedsname;
+        this.mitgliedsname = mitgliedsname;
         this.haus = haus;
         this.ereignis = ereignis;
         this.datum = datum;
