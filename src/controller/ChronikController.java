@@ -22,32 +22,32 @@ public class ChronikController {
     /**
      * Returns all the students whose names begin with a specified letter.
      */
-    public List<String> getStudentsByLetter(String letter) {
-        Set<String> uniqueStudents = new HashSet<>(); // Eliminating students that show up more than once
+    public List<String> getMitgliedsByLetter(String letter) {
+        Set<String> uniqueMitglieds = new HashSet<>(); // Eliminating students that show up more than once
         for (Log entry : logEntries) {
             String studentName = entry.getMitgliedsname();
             if (studentName.startsWith(String.valueOf(letter))) {
-                uniqueStudents.add(studentName);
+                uniqueMitglieds.add(studentName);
             }
         }
-        return new ArrayList<>(uniqueStudents); // Converting to List, printStudents needs a List parameter
+        return new ArrayList<>(uniqueMitglieds); // Converting to List, printMitglieds needs a List parameter
     }
 
     //c
     /**
      * Returns all the Gryffindor in alphabetical order.
      */
-    public List<String> getGryffindorStudents() {
-        Set<String> uniqueStudents = new HashSet<>();
+    public List<String> getStarkMitglied(String stark) {
+        Set<String> uniqueMitglieds = new HashSet<>();
         for (Log entry : logEntries) {
             if (entry.getHaus() == Haus.STARK) {
-                uniqueStudents.add(entry.getMitgliedsname());
+                uniqueMitglieds.add(entry.getMitgliedsname());
             }
         }
-        List<String> sortedStudents = new ArrayList<>(uniqueStudents);
-        Collections.sort(sortedStudents);
+        List<String> sortedMitglieds = new ArrayList<>(uniqueMitglieds);
+        Collections.sort(sortedMitglieds);
 
-        return sortedStudents;
+        return sortedMitglieds;
     }
 
     //d
