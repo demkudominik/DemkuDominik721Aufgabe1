@@ -7,16 +7,16 @@ import java.util.Date;
  */
 public class Log {
     private int id;
-    private String Mitgliedsname;
+    private String mitgliedsname;
     private Haus haus;
-    private String ereignise;
+    private String ereignis;
     private Date datum;
 
-    public Log(int id, String mitgliedsname, Haus haus, String ereignise, Date datum) {
+    public Log(int id, String mitgliedsname, Haus haus, String ereignis, Date datum) {
         this.id = id;
         this.Mitgliedsname = mitgliedsname;
         this.haus = haus;
-        this.ereignise = ereignise;
+        this.ereignis = ereignis;
         this.datum = datum;
     }
 
@@ -32,8 +32,8 @@ public class Log {
         return haus;
     }
 
-    public String getAuthority() {
-        return ereignise;
+    public String getEreignis() {
+        return ereignis;
     }
 
     public Date getDatum() {
@@ -46,7 +46,7 @@ public class Log {
                 "id=" + id +
                 ", mitgliedsname='" + mitgliedsname + '\'' +
                 ", haus=" + haus +
-                ", ereignise='" + ereignise + '\'' +
+                ", ereignis='" + ereignis + '\'' +
                 ", datum=" + datum +
                 '}';
     }
