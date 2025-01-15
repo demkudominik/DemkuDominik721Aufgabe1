@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -33,7 +34,7 @@ public class JSONLogParser implements LogParser {
             String[] fields = entry.split(",\\s*");
             int id = 0, points = 0;
             String mitgliedsname = null, ereignis = null;
-            House house = null;
+            Haus haus = null;
 
             for (String field : fields) {
                 String[] keyValue = field.split(":");
@@ -53,12 +54,12 @@ public class JSONLogParser implements LogParser {
                     case "Ereignis":
                         ereignis = value;
                         break;
-                    case "Datum":
-                        datum = Integer.parseInt(value);
-                        break;
+                //    case "Datum":
+                //        datum = Integer.parseInt(value);
+                //        break;
                 }
             }
-            logEntries.add(new Log(id, mitgliedsname, house, ereignis, points));
+            logEntries.add(new Log(id, mitgliedsname, haus, ereignis, new Date()));
         }
         return logEntries;
     }
